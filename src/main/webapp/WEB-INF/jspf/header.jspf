@@ -1,0 +1,47 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#efcfe3">
+<title>
+<c:out value="${tituloPagina}"/> · Biblioteca UDB</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css">
+<script defer src="${pageContext.request.contextPath}/assets/js/app.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="app-layout">
+<aside class="sidebar">
+<a class="brand" href="${pageContext.request.contextPath}/">
+<span class="brand-icon" aria-hidden="true">b.</span>
+<span>Biblioteca<span class="brand-caption">UNIVERSIDAD DON BOSCO</span>
+</span>
+</a>
+<nav aria-label="Navegación principal">
+<a class="nav-item ${empty seccion ? 'selected' : ''}" ${empty seccion ? 'aria-current="page"' : ''} href="${pageContext.request.contextPath}/">
+<span aria-hidden="true">⌂</span> Inicio</a>
+<a class="nav-item ${seccion == 'libros' ? 'selected' : ''}" ${seccion == 'libros' ? 'aria-current="page"' : ''} href="${pageContext.request.contextPath}/libros">
+<span aria-hidden="true">▤</span> Libros</a>
+<a class="nav-item ${seccion == 'estudiantes' ? 'selected' : ''}" ${seccion == 'estudiantes' ? 'aria-current="page"' : ''} href="${pageContext.request.contextPath}/estudiantes">
+<span aria-hidden="true">♙</span> Estudiantes</a>
+<a class="nav-item ${seccion == 'prestamos' ? 'selected' : ''}" ${seccion == 'prestamos' ? 'aria-current="page"' : ''} href="${pageContext.request.contextPath}/prestamos">
+<span aria-hidden="true">⇄</span> Préstamos</a>
+</nav>
+<div class="sidebar-note">
+<span class="small-label">UN ESPACIO PARA APRENDER</span>
+<p>Cada libro abre<br>una nueva posibilidad.</p>
+<span aria-hidden="true">✳</span>
+</div>
+<small class="sidebar-footer">Biblioteca Central · UDB</small>
+</aside>
+<main id="contenido" class="main-content" tabindex="-1">
+<div class="topbar">
+<span>Gestión de biblioteca</span>
+<span class="staff-badge">Personal bibliotecario</span>
+</div>

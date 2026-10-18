@@ -1,0 +1,11 @@
+<c:if test="${not empty error}">
+<div class="notice notice-error" role="alert" tabindex="-1" data-error>
+<strong>Revisa lo siguiente</strong>
+<p class="mb-0">
+<c:out value="${error}"/>
+</p>
+</div>
+</c:if>
+<c:if test="${integracionPendiente}">
+<div class="notice" role="status">Los préstamos estarán disponibles cuando se complete la integración. Por ahora puedes revisar las pantallas.</div>
+</c:if>
