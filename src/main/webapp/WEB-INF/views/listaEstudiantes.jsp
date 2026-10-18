@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/jspf/header.jspf" %>
 <div class="page-heading">
 <div>
-<span class="eyebrow">BIBLIOTECA CENTRAL</span>
+<span class="eyebrow">BIBLIOTECA UDB</span>
 <h1>Estudiantes</h1>
 <p>La comunidad que da vida a nuestra biblioteca.</p>
 </div>

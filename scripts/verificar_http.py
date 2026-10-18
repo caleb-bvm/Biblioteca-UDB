@@ -23,6 +23,8 @@ def check(condition, name):
 for path in ['/', '/libros', '/libros?accion=nuevo', '/estudiantes', '/estudiantes?accion=nuevo', '/prestamos', '/prestamos?accion=nuevo']:
     status, body, url = request(path)
     check(status == 200, 'GET '+path)
+    check(not any(character in body for character in ['\u00c3', '\u00c2', '\ufffd']), 'UTF-8 correcto: '+path)
+    check('Personal bibliotecario' not in body and 'Biblioteca UDB' in body, 'Encabezado actualizado: '+path)
 
 student = {'carnet': 'T'+str(int(time.time()))[-9:], 'nombreEstudiante': 'Prueba José <script>alert(1)</script>', 'carrera': 'Computación', 'telefono': '2222-3333'}
 status, body, url = request('/estudiantes',student)

@@ -4,7 +4,7 @@
 <%@ include file="/WEB-INF/jspf/header.jspf" %>
 <section class="hero">
 <div class="hero-copy">
-<span class="eyebrow">BIBLIOTECA CENTRAL</span>
+<span class="eyebrow">BIBLIOTECA UDB</span>
 <h1>El próximo capítulo<br>empieza aquí.</h1>
 <p>Libros, estudiantes y préstamos.<br>Todo en un mismo lugar.</p>
 <a class="btn btn-primary" href="${pageContext.request.contextPath}/libros">Explorar libros <span aria-hidden="true">↗</span>
@@ -38,7 +38,7 @@
 </div>
 <div class="row g-3">
 <div class="col-md-4">
-<a class="action-card card-pink" href="${pageContext.request.contextPath}/libros?accion=nuevo">
+<a class="action-card card-sky" href="${pageContext.request.contextPath}/libros?accion=nuevo">
 <span class="card-symbol" aria-hidden="true">▤</span>
 <h3>Registrar un libro</h3>
 <p>Agrega un título al catálogo y define sus ejemplares disponibles.</p>
@@ -56,7 +56,7 @@
 </a>
 </div>
 <div class="col-md-4">
-<a class="action-card card-green" href="${pageContext.request.contextPath}/prestamos?accion=nuevo">
+<a class="action-card card-yellow" href="${pageContext.request.contextPath}/prestamos?accion=nuevo">
 <span class="card-symbol" aria-hidden="true">⇄</span>
 <h3>Prestar un libro</h3>
 <p>Selecciona un libro, un estudiante y la fecha de devolución.</p>
