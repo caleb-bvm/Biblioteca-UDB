@@ -20,6 +20,7 @@ Proyecto académico de Programación Orientada a Objetos. Permite registrar y co
 
 1. Abre esta carpeta como proyecto Maven en NetBeans, IntelliJ IDEA o Eclipse.
 2. Ejecuta `sql/bibliotecaudb.sql` en MySQL Workbench o desde el cliente MySQL. Se usa una base nueva: el script no borra tablas y debe ejecutarse una sola vez.
+   Si ya tienes la base creada, ejecuta únicamente `sql/datos_adicionales.sql` para agregar los nuevos ejemplos sin duplicarlos ni modificar tus registros. El script inicial incluye estos mismos datos. Los ejemplos adicionales son ficticios.
 3. Copia `src/main/resources/db.properties.example` como `src/main/resources/db.properties` y ajusta usuario, contraseña y URL. El archivo con credenciales está excluido de Git.
 4. Configura Tomcat 10.1 como servidor del proyecto.
 5. Ejecuta `mvn clean package`. El archivo generado es `target/biblioteca.war`.
@@ -53,10 +54,12 @@ Flujo: formulario → Servlet → DAO → MySQL → Servlet → JSP. Después de
 
 Estética inspirada en Material Design 3: superficies suaves, esquinas redondeadas, botones amplios y navegación visible. Se conserva Bootstrap 5, como pide la tarea.
 
-- Rosa `#efcfe3`: navegación y portada.
-- Rosa `#e27396`: ilustración y marca.
-- Celeste `#b3dee2` y verde `#eaf2d7`: acentos y ayuda.
-- Ciruela `#843c58`: botones y enlaces con texto legible.
+- Azul `#2155a3`: botones, enlaces y acentos.
+- Azul claro `#dce8ff`: portada y navegación seleccionada.
+- Amarillo `#f4c542`: marca e ilustración.
+- Amarillo suave `#fff2bf`: tarjetas y paneles de ayuda.
+
+Las páginas comienzan en la parte superior del área de contenido. Los fragmentos JSP compartidos declaran UTF-8 para conservar tildes y eñes.
 
 Los formularios tienen etiquetas visibles, campos obligatorios identificados, errores con foco y conservación de valores. Las tablas incluyen búsqueda que ignora tildes y mayúsculas. El diseño se adapta a pantallas estrechas; las tablas amplias tienen desplazamiento horizontal.
 
