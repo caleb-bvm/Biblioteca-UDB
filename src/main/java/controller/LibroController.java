@@ -1,7 +1,11 @@
 package controller;
 
 import dao.CategoriaDAO;
+<<<<<<< HEAD
 import com.mycompany.poo.jsp.biblioteca.dao.LibroDAO;
+=======
+import dao.LibroDAO;
+>>>>>>> d1259d620c13065e653c83f6010ffc046a27af41
 import models.CategoriaBean;
 import models.LibroBean;
 import jakarta.servlet.ServletException;
