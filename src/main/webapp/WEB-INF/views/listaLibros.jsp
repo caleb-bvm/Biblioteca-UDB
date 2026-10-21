@@ -70,7 +70,7 @@
 </div>
 </c:when>
 <c:otherwise>
-<c:if test="${empty error and not integracionPendiente}">
+<c:if test="${empty error}">
 <div class="panel empty-state">
 <span class="empty-icon" aria-hidden="true">＋</span>
 <h2>Tu catálogo empieza con un libro</h2>

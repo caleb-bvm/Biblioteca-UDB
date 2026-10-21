@@ -2,6 +2,28 @@
 SET NAMES utf8mb4;
 USE bibliotecaudb;
 
+INSERT INTO categorias (nombre_categoria)
+SELECT nuevas.nombre_categoria
+FROM (
+    SELECT 'Arte y diseño' AS nombre_categoria
+    UNION ALL SELECT 'Biografías'
+    UNION ALL SELECT 'Economía y negocios'
+    UNION ALL SELECT 'Filosofía'
+    UNION ALL SELECT 'Geografía'
+    UNION ALL SELECT 'Idiomas'
+    UNION ALL SELECT 'Matemáticas'
+    UNION ALL SELECT 'Medicina y salud'
+    UNION ALL SELECT 'Música'
+    UNION ALL SELECT 'Psicología'
+    UNION ALL SELECT 'Sociología'
+    UNION ALL SELECT 'Viajes'
+) AS nuevas
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM categorias existentes
+    WHERE existentes.nombre_categoria = nuevas.nombre_categoria
+);
+
 INSERT INTO libros (titulo, autor, isbn, id_categoria, cantidad_disponible) VALUES
 ('Programación en Java', 'Laura Méndez', 'DEMO-JAVA-001', 1, 5),
 ('Introducción a bases de datos', 'Andrés López', 'DEMO-BD-002', 1, 4),

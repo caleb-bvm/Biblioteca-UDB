@@ -49,12 +49,12 @@
 <div class="col-md-6">
 <label class="form-label" for="fechaDevolucion">Fecha de devolución *</label>
 <input class="form-control" type="date" id="fechaDevolucion" name="fechaDevolucion" required value="${fn:escapeXml(param.fechaDevolucion)}">
-<div class="form-text">No puede ser anterior a la fecha del préstamo.</div>
+<div class="form-text">Debe ser posterior o igual a la fecha del préstamo y no superar 14 días.</div>
 </div>
 </div>
 <div class="form-actions">
 <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/prestamos">Cancelar</a>
-<button class="btn btn-primary" type="submit" ${integracionPendiente or empty estudiantes or empty libros ? 'disabled' : ''}>Registrar préstamo</button>
+<button class="btn btn-primary" type="submit" ${empty estudiantes or empty libros ? 'disabled' : ''}>Registrar préstamo</button>
 </div>
 </form>
 <aside class="panel help-panel">

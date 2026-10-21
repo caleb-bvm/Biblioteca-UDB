@@ -66,7 +66,7 @@
 <form method="post" action="${pageContext.request.contextPath}/prestamos" data-return-form>
 <input type="hidden" name="accion" value="devolver">
 <input type="hidden" name="idPrestamo" value="${item.idPrestamo}">
-<button class="btn btn-outline-secondary btn-small" type="submit" ${integracionPendiente ? 'disabled' : ''} aria-label="Devolver ${fn:escapeXml(item.libro.titulo)} de ${fn:escapeXml(item.estudiante.nombreEstudiante)}">Devolver</button>
+<button class="btn btn-outline-secondary btn-small" type="submit" aria-label="Devolver ${fn:escapeXml(item.libro.titulo)} de ${fn:escapeXml(item.estudiante.nombreEstudiante)}">Devolver</button>
 </form>
 </c:when>
 <c:otherwise>
@@ -86,7 +86,7 @@
 </div>
 </c:when>
 <c:otherwise>
-<c:if test="${empty error and not integracionPendiente}">
+<c:if test="${empty error}">
 <div class="panel empty-state">
 <span class="empty-icon" aria-hidden="true">＋</span>
 <h2>Todavía no hay préstamos</h2>

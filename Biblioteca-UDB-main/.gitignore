@@ -1,6 +1,0 @@
-/target/
-/.tools/
-/tmp/
-/.idea/
-*.iml
-/src/main/resources/db.properties

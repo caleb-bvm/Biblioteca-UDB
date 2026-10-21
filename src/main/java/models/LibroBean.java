@@ -1,9 +1,5 @@
 package models;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d1259d620c13065e653c83f6010ffc046a27af41
 public class LibroBean {
     private int idLibro;
     private String titulo;
@@ -31,8 +27,4 @@ public class LibroBean {
 
     public int getCantidadDisponible() { return cantidadDisponible; }
     public void setCantidadDisponible(int cantidadDisponible) { this.cantidadDisponible = cantidadDisponible; }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d1259d620c13065e653c83f6010ffc046a27af41

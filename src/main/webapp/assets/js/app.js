@@ -18,9 +18,18 @@ if (search) {
 const loanDate = document.querySelector('[name="fechaPrestamo"]');
 const returnDate = document.querySelector('[name="fechaDevolucion"]');
 if (loanDate && returnDate) {
-    const updateMinimum = () => { returnDate.min = loanDate.value; };
-    loanDate.addEventListener('change', updateMinimum);
-    updateMinimum();
+    const updateDateLimits = () => {
+        returnDate.min = loanDate.value;
+        if (loanDate.value) {
+            const maximum = new Date(`${loanDate.value}T00:00:00`);
+            maximum.setDate(maximum.getDate() + 14);
+            returnDate.max = maximum.toISOString().slice(0, 10);
+        } else {
+            returnDate.removeAttribute('max');
+        }
+    };
+    loanDate.addEventListener('change', updateDateLimits);
+    updateDateLimits();
 }
 
 document.querySelectorAll('[data-return-form]').forEach(form => {

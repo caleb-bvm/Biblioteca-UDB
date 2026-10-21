@@ -36,10 +36,29 @@ CREATE TABLE prestamos (
     estado VARCHAR(20) NOT NULL DEFAULT 'Activo',
     FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante),
     FOREIGN KEY (id_libro) REFERENCES libros(id_libro),
-    CHECK (fecha_devolucion >= fecha_prestamo)
+    CHECK (
+        fecha_devolucion >= fecha_prestamo
+        AND fecha_devolucion <= DATE_ADD(fecha_prestamo, INTERVAL 14 DAY)
+    )
 ) ENGINE=InnoDB;
 
-INSERT INTO categorias (nombre_categoria) VALUES ('Programación'), ('Literatura'), ('Ciencias'), ('Historia');
+INSERT INTO categorias (nombre_categoria) VALUES
+('Programación'),
+('Literatura'),
+('Ciencias'),
+('Historia'),
+('Arte y diseño'),
+('Biografías'),
+('Economía y negocios'),
+('Filosofía'),
+('Geografía'),
+('Idiomas'),
+('Matemáticas'),
+('Medicina y salud'),
+('Música'),
+('Psicología'),
+('Sociología'),
+('Viajes');
 INSERT INTO libros (titulo, autor, isbn, id_categoria, cantidad_disponible) VALUES
 ('Fundamentos de programación', 'Luis Joyanes Aguilar', '9788448156459', 1, 3),
 ('El principito', 'Antoine de Saint-Exupéry', '9788478887194', 2, 2),

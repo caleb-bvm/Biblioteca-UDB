@@ -7,6 +7,3 @@
 </p>
 </div>
 </c:if>
-<c:if test="${integracionPendiente}">
-<div class="notice" role="status">Los préstamos estarán disponibles cuando se complete la integración. Por ahora puedes revisar las pantallas.</div>
-</c:if>
